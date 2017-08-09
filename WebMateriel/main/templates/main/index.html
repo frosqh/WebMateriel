@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Gestion Outillage</title>
+	</head>
+	<style type="text/css">
+		table
+		{
+		    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+		}
+		td, th
+		{
+			width: 24% ;
+		    border: 1px solid black;
+		}
+		a.hover {
+			border:0;
+		}
+		a {
+			text-decoration: none;
+			color : black;
+		}
+	</style>
+
+	<body>
+		<script> if ('{{message}}' != ''){alert('{{message}}')} 
+		</script>
+
+		<h1> Gestion Outillage </h1>
+
+		<p>
+			{% if 'filterFamille' in request.session and request.session.filterFamille != '' or 'filterSousFamille' in request.session and request.session.filterSousFamille != '' or 'filterFournisseur' in request.session and request.session.filterFournisseur != '' or 'filterPignouf' in request.session and request.session.filterPignouf != '' or 'filterDispo' in request.session and request.session.filterDispo != '' or 'filterAutre' in request.session and request.session.filterAutre != '' %}
+				Filtré par :
+					<ul>
+						{%if 'filterFamille' in request.session and request.session.filterFamille != ''%}<li>
+							 <button id='supprFamille'>🗑</button> Famille = {{request.session.filterFamille}}</li>
+						{%endif%}
+						{%if 'filterSousFamille' in request.session and request.session.filterSousFamille != ''%}<li>
+							 <button id='supprSousFamille'>🗑</button> SousFamille = {{request.session.filterSousFamille}}</li>
+						{%endif%}
+						{%if 'filterFournisseur' in request.session and request.session.filterFournisseur != ''%}<li>
+							 <button id='supprFournisseur'>🗑</button> Fournisseur = {{request.session.filterFournisseur}}</li>
+						{%endif%}
+						{%if 'filterPignouf' in request.session and request.session.filterPignouf != ''%}<li>
+							 <button id='supprPignouf'>🗑</button> Salarié = {{request.session.filterPignouf}}</li>
+						{%endif%}
+						{%if 'filterDispo' in request.session and request.session.filterDispo != ''%}<li>
+							 <button id='supprDispo'>🗑</button> Dispo = {{request.session.filterDispo}}</li>
+						{%endif%}
+						{%if 'filterAutre' in request.session and request.session.filterAutre != ''%}<li>
+							 <button id='supprAutre'>🗑</button> Autre = {{request.session.filterAutre}}</li>
+						{%endif%}
+					</ul>
+			{%endif%}
+		</p>
+
+
+
+		<input type='button' id='hideshow' value='Ajouter'>		<input type='button' id='hideshoBis' value='Filtrer'> <form method= 'post' style ='display: inline'> {%csrf_token%} <input type='Submit' id='reset' name='reset' value='Reset'> <input type='text' style='display: none' name='reset' value='lorem ipsum'></form>
+		<div id='content' style='display: none'> <input type='button' id='family' value='Une famille'> <input type='button' id='sous-family' value='Une sous-famille'> <input type='button' id='four' value='Un fournisseur'> <input type='button' id='pignouf' value='Un salarié'> <input type='button' id='outil' value='Un outil'> <input type='button' id='other' value='Une catégorie "autre"'></div>
+
+		<div id='contentbis' style='display: none'> <input type='button' id='familybis' value='Par famille'> <input type='button' id='sous-familybis' value='Par sous-famille'> <input type='button' id='fourbis' value='Par fournisseur'> <input type='button' id='pignoufbis' value='Par salarié'> <input type='button' id='outilbis' value='Par Disponibilité'> <input type='button' id='otherbis' value='Par catégorie "autre"'></div>
+
+
+		<div id='famille' style='display: none'>
+			<form method='post' name='test'> {%csrf_token%}
+				<label id ="nom">Nom de la famille :</label><br>
+				<input type="text" name="nomAddFamille" value="" id="nom"/><br>
+				<input type="Submit" value="Ajouter" id="AjoutFamille">
+			</form>
+		</div>
+		<div id='sousfamille' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id='familleSelect'>Famille :</label><br>
+				<SELECT name='nomFamille' id='familleSelBis' size='3'>
+					{%for f in famille%}
+						<OPTION > {{f}}</OPTION>
+					{%endfor%}
+				</SELECT><br>
+				<label id ="nom">Nom de la sous-famille :</label><br>
+				<input type="text" name="nomAddSousFamille" value="" id="nom"/><br>
+				<input type="Submit" value="Ajouter" id="AjoutSousFamille">
+			</form>
+		</div>
+		<div id='divfou' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id ="nom">Nom du fournisseur :</label><br>
+				<input type="text" name="nomAddFournisseur" value="" id="nom"/><br>
+				<input type="Submit" value="Ajouter" id="AjoutFournisseur">
+			</form>
+		</div>
+		<div id='divpig' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id ="nom">Nom du salarié :</label><br>
+				<input type="lastname" name="nomAddOuvrier" value="" id="nom"/><br>
+				<label id = "prenom">Prénom du salarié :</label><br>
+				<input type="firstname" name="prenom" value="" id="prenom"><br>
+				<input type="Submit" value="Ajouter" id="AjoutOuvrier">
+			</form>
+		</div>
+		<div id='divoutil' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id='familleSelect'>Famille :</label><br>
+				<SELECT id='familleSel' name='famille' size='3'>
+					{%for f in famille%}
+						<OPTION > {{f}}</OPTION>
+					{%endfor%}
+				</SELECT><br>
+
+				<label id='sousfamilleSelect'>Sous-famille :</label><br>
+				<SELECT id='sousfamilleSel' name='sousfamille' size='1'>
+				</SELECT><br>
+
+				<label id ="nomAddOutil">Nom de l'outil :</label><br>
+				<input type="text" name="nomAddOutil" value="" id="nom"/><br>
+				<label id = "numSerie">Numéro de série :</label><br>
+				<input type="text" name="numSerie" value="" id="numSerie"><br>
+				<label id = "fournisseur">Fournisseur :</label><br>
+				<SELECT id='fournisseureSel' name='fournisseur' size='3'>
+					{%for f in fournisseur%}
+						<OPTION > {{f}}</OPTION>
+					{%endfor%}
+				</SELECT><br>
+				<input type="Submit" value="Ajouter" id="AjoutOutil">
+			</form>
+		</div>
+		<div id='divautre' style='display:none'>
+			<form method='post'>  {%csrf_token%}
+				<label id='autreNom'>Texte :</label><br>
+				<input type='text' name='nomAddAutre' value='' id='text'/><br>
+				<input type='Submit' value="Ajouter" id='AjoutAutre'/>
+			</form>
+		</div>
+
+		<div id='famillebis' style='display:none'>
+			<form method='post'> {%csrf_token%}
+				<label id='nom'>Nom de la famille :</label><br>
+				<select name='nomFamilleFilter' id='familleSelection' size='3'>
+					{%for f in famille%}
+						<OPTION> {{f}} </OPTION>
+					{%endfor%}
+				</select>
+				<input type='Submit' value='Filtrer' id='FilterFamille'>
+			</form>
+		</div>
+
+		<div id='sousfamillebis' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id='nom'>Nom de la sous-famille :</label><br>
+				<select name='nomSousFamilleFilter' id='sousfamilleSelection' size='1'>
+					{% for sf in sousFamille%}
+						<option> {{sf}} </option>
+					{%endfor%}
+				</select>
+				<input type='Submit' value='Filtrer' id='FilterSousFamille'>
+			</form>
+		</div>
+
+		<div id='divfoubis' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id='nom'>Nom du fournisseur :</label><br>
+				<select name='nomFournisseurFilter' id='fournisseureSelection' size='2'>
+					{% for f in fournisseur %}
+						<option> {{f}} </option>
+					{%endfor%}
+				</select>
+				<input type='Submit' value='Filtrer' id='FilterFournisseur'>
+			</form>
+		</div>
+
+		<div id='divoutilbis' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id='nom'>Disponibilité :</label><br>
+				<select name='nomDispoFilter' id='DispoSelection' size='2'>
+					<option> OUI </option>
+					<option> NON </option>
+				</select>
+				<input type='Submit' value='Filtrer' id='FilterDispo'>
+			</form>
+		</div>
+
+		<div id='divpigbis' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id='nom'>Nom du salarié</label><br>
+				<select name='nomPignoufFilter' id='pignoufSelection' size='3'>
+					{%for p in pignoufs%}
+						<option>{{p}}</option>
+					{%endfor%}
+				</select>
+				<input type='Submit' value='Filtrer' id='FilterPignouf'>
+			</form>
+		</div>
+
+		<div id='divautrebis' style='display: none'>
+			<form method='post'> {%csrf_token%}
+				<label id='nom'>Nom de la catégorie :</label><br>
+				<select name='nomAutreFilter' id='autreSelection' size='2'>
+					{% for a in autre%}
+						<option> {{a}} </option>
+					{%endfor%}
+				</select>
+				<input type='Submit' value='Filtrer' id='FilterAutre'>
+			</form>
+		</div>
+
+
+		<script>
+			var el = document.getElementsByName("csrfmiddlewaretoken");
+			csrf_value = el[0].getAttribute("value");
+		</script>
+
+
+
+		<table>
+			<tr>
+				<th name='nom' onclick="post({name:'trinom', csrfmiddlewaretoken: csrf_value})">Nom</th>
+				<th name='identififiant' onclick="post({name:'triid', csrfmiddlewaretoken: csrf_value})">Identifiant</th>
+				<th name='dispo' onclick="post({name:'tridispo', csrfmiddlewaretoken: csrf_value})">Disponibilité</th>
+				<th name='emprunteur' onclick="post({name:'triemprunteur', csrfmiddlewaretoken: csrf_value})">Emprunteur ?</th>
+				<th name='autre' onclick="post({name:'triautre', csrfmiddlewaretoken: csrf_value})">Autre</th>
+			</tr>
+			{%for outil in outilList%}
+				<tr>
+					<td><center><a href="/outil/{{outil.id}}">{{outil.nom}}</a></center></td>
+					<td><center>{{outil.numSerie}}</center></td>
+					{%if outil.isDispo %}
+						<td style='color:green'><center>✓</center></td>
+					{%else%}
+						<td style='color:red'><center>✗</center></td>
+					{%endif%}
+					{% if not outil.isDispo and outil.autreId == None%}
+						<td><center><a href="/ouvrier/{{outil.emprunteur.id}}">{{outil.emprunteur}}</a></center></td>
+					{%else%}
+						<td></td>
+					{%endif%}
+					<td><center>
+					{%if outil.autreId != None%}
+						{{outil.autreId}}
+					{%endif%}
+					</center></td>
+					<td><form method='post'>{%csrf_token%} 
+					<input type='text' name='outilID' value='{{outil.id}}' style='display:none'/>
+					<input name='edit' type=submit value='Modifier'></form></td>
+				</tr>
+			{%endfor%}
+		</table>
+
+
+		<script>
+			var button = document.getElementById('hideshow');
+			var buttonF = document.getElementById('family');
+			var buttonS = document.getElementById('sous-family');
+			var buttonFo = document.getElementById('four');
+			var buttonP = document.getElementById('pignouf'); 
+			var buttonO = document.getElementById('outil');
+			var buttonA = document.getElementById('other');
+
+			function toggle(divName){
+				if (divName !== 'content'){
+					var divs = document.getElementsByTagName("div");
+					for (var i = 0; i < divs.length; i++){
+						divs[i].style.display = 'none';
+					}
+					toggle('content');
+				}
+				var div = document.getElementById(divName);
+	   			if (div.style.display !== 'none') {
+	   				if (divName == 'content'){
+	   					button.value = 'Ajouter'
+	   					var divs = document.getElementsByTagName("div");
+						for (var i = 0; i < divs.length; i++){
+							divs[i].style.display = 'none';
+						}
+	   				}
+	       			div.style.display = 'none';
+	    		}
+	    		else {
+	    			if (divName == 'content'){
+	    				button.value = 'Cacher';
+	    			}
+	        		div.style.display = 'block';
+	    		}
+			}
+
+			button.onclick = function(){toggle('content')};
+			buttonF.onclick = function(){toggle('famille')};
+			buttonS.onclick = function(){toggle('sousfamille')};
+			buttonFo.onclick = function(){toggle('divfou')};
+			buttonP.onclick = function(){toggle('divpig')};
+			buttonO.onclick = function(){toggle('divoutil')};
+			buttonA.onclick = function(){toggle('divautre')};
+		</script>
+
+
+	<script type="text/javascript">
+		var selectFamille = document.getElementById('familleSel');
+		var selectSousFamille = document.getElementById('sousfamilleSel');
+		selectFamille.onchange = function(){
+			var index = this.selectedIndex;
+			var selectedText = this[index].text;
+			selectSousFamille.options.length = 0
+			{%for sf in sousFamille%}
+				if ('{{sf.familleID}}'== selectedText){
+					selectSousFamille[selectSousFamille.options.length] = new Option('{{sf}}');
+				}
+			{%endfor%}
+		}
+	</script>
+
+	<script type='text/javascript'>
+		var bF = document.getElementById('supprFamille')
+		var bSF = document.getElementById('supprSousFamille')
+		var bFo = document.getElementById('supprFournisseur')
+		var bP = document.getElementById('supprPignouf')
+		var bD = document.getElementById('supprDispo')
+		var bA = document.getElementById('supprAutre')
+
+		if (bF !=null){
+			bF.onclick = function(){
+				var form = document.createElement("form");
+				form.setAttribute("method", 'post');
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", "supprFamille");
+				var hiddenFieldBis = document.createElement("input");
+				hiddenFieldBis.setAttribute("type", "hidden");
+				hiddenFieldBis.setAttribute("name", "csrfmiddlewaretoken");
+				hiddenFieldBis.setAttribute("value", csrf_value);
+				form.appendChild(hiddenField);
+				form.appendChild(hiddenFieldBis);
+				document.body.appendChild(form);
+				form.submit();
+			}
+		}
+
+		if (bSF != null){
+			bSF.onclick = function(){
+				var form = document.createElement("form");
+				form.setAttribute("method", 'post');
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", "supprSousFamille");
+				var hiddenFieldBis = document.createElement("input");
+				hiddenFieldBis.setAttribute("type", "hidden");
+				hiddenFieldBis.setAttribute("name", "csrfmiddlewaretoken");
+				hiddenFieldBis.setAttribute("value", csrf_value);
+				form.appendChild(hiddenField);
+				form.appendChild(hiddenFieldBis);
+				document.body.appendChild(form);
+				form.submit();
+			}
+		}
+
+
+		if (bFo != null){
+			bFo.onclick = function(){
+				var form = document.createElement("form");
+				form.setAttribute("method", 'post');
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", "supprFournisseur");
+				var hiddenFieldBis = document.createElement("input");
+				hiddenFieldBis.setAttribute("type", "hidden");
+				hiddenFieldBis.setAttribute("name", "csrfmiddlewaretoken");
+				hiddenFieldBis.setAttribute("value", csrf_value);
+				form.appendChild(hiddenField);
+				form.appendChild(hiddenFieldBis);
+				document.body.appendChild(form);
+				form.submit();
+			}
+		}
+
+
+		if (bP != null){
+			bP.onclick = function(){
+				var form = document.createElement("form");
+				form.setAttribute("method", 'post');
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", "supprPignouf");
+				var hiddenFieldBis = document.createElement("input");
+				hiddenFieldBis.setAttribute("type", "hidden");
+				hiddenFieldBis.setAttribute("name", "csrfmiddlewaretoken");
+				hiddenFieldBis.setAttribute("value", csrf_value);
+				form.appendChild(hiddenField);
+				form.appendChild(hiddenFieldBis);
+				document.body.appendChild(form);
+				form.submit();
+			}
+		}
+
+
+		if (bD != null){
+			bD.onclick = function(){
+				var form = document.createElement("form");
+				form.setAttribute("method", 'post');
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", "supprDispo");
+				var hiddenFieldBis = document.createElement("input");
+				hiddenFieldBis.setAttribute("type", "hidden");
+				hiddenFieldBis.setAttribute("name", "csrfmiddlewaretoken");
+				hiddenFieldBis.setAttribute("value", csrf_value);
+				form.appendChild(hiddenField);
+				form.appendChild(hiddenFieldBis);
+				document.body.appendChild(form);
+				form.submit();
+			}
+		}
+
+
+		if (bA != null){
+			bA.onclick = function(){
+				var form = document.createElement("form");
+				form.setAttribute("method", 'post');
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", "supprAutre");
+				var hiddenFieldBis = document.createElement("input");
+				hiddenFieldBis.setAttribute("type", "hidden");
+				hiddenFieldBis.setAttribute("name", "csrfmiddlewaretoken");
+				hiddenFieldBis.setAttribute("value", csrf_value);
+				form.appendChild(hiddenField);
+				form.appendChild(hiddenFieldBis);
+				document.body.appendChild(form);
+				form.submit();
+			}
+		}
+	</script>
+
+
+
+	<script type="text/javascript">
+
+		function post(params){
+			method = 'post'
+
+			var form = document.createElement("form");
+			form.setAttribute("method", method);
+			for (var key in params) {
+				if (params.hasOwnProperty(key)) {
+					var hiddenField = document.createElement("input");
+					hiddenField.setAttribute("type", "hidden");
+					hiddenField.setAttribute("name", key);
+					hiddenField.setAttribute("value", params[key]);
+
+					form.appendChild(hiddenField);
+				}
+			}
+
+			document.body.appendChild(form);
+			form.submit();
+		}
+	</script>
+
+
+	<script>
+		var buttonB = document.getElementById('hideshoBis');
+		var buttonFB = document.getElementById('familybis');
+		var buttonSB = document.getElementById('sous-familybis');
+		var buttonFoB = document.getElementById('fourbis');
+		var buttonPB = document.getElementById('pignoufbis'); 
+		var buttonOB = document.getElementById('outilbis');
+		var buttonAB = document.getElementById('otherbis');
+
+		function toggleBis(divName){
+			if (divName !== 'contentbis'){
+				var divs = document.getElementsByTagName("div");
+				for (var i = 0; i < divs.length; i++){
+					divs[i].style.display = 'none';
+				}
+				toggleBis('contentbis');
+			}
+			var div = document.getElementById(divName);
+   			if (div.style.display !== 'none') {
+   				if (divName == 'contentbis'){
+   					buttonB.value = 'Filtrer'
+   					var divs = document.getElementsByTagName("div");
+					for (var i = 0; i < divs.length; i++){
+						divs[i].style.display = 'none';
+					}
+   				}
+       			div.style.display = 'none';
+    		}
+    		else {
+    			if (divName == 'contentbis'){
+    				buttonB.value = 'Cacher';
+    			}
+        		div.style.display = 'block';
+    		}
+		}
+
+		buttonB.onclick = function(){toggleBis('contentbis')};
+		buttonFB.onclick = function(){toggleBis('famillebis')};
+		buttonSB.onclick = function(){toggleBis('sousfamillebis')};
+		buttonFoB.onclick = function(){toggleBis('divfoubis')};
+		buttonPB.onclick = function(){toggleBis('divpigbis')};
+		buttonOB.onclick = function(){toggleBis('divoutilbis')};
+		buttonAB.onclick = function(){toggleBis('divautrebis')};
+
+	</script>
+
+	</body>
+</html>

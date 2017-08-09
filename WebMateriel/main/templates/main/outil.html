@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Gestion Outillage</title>
+	</head>
+	<style type="text/css">
+		table
+		{
+		    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+		}
+		td, th
+		{
+			width: 24% ;
+		    border: 1px solid black;
+		}
+		a.hover {
+			border:0;
+		}
+		a {
+			text-decoration: none;
+			color : black;
+		}
+	</style>
+
+	<body>
+
+		<h1> <a href='../'>Gestion Outillage </a></h1>
+
+		<h2> Outil n° {{outil.id}} </h2>
+
+		<p> Nom : {{outil.nom}} </p>
+		<p> Numéro de Série : {{outil.numSerie}} </p>
+		<p> Fournisseur : {{outil.fournisseurID}} </p>
+		<p> Disponibilité : {%if outil.isDispo%} ✓ {%else%} ✗ {%endif%}</p>
+		{% if not outil.isDispo%}
+			{%if not outil.autreId != None%}
+				<p> Emprunté par : {{outil.emprunteur}}
+			{%endif%}
+		{%endif%}
+		{%if outil.autreId != None%}
+			<p> Autre : {{outil.autreId}} </p>
+		{%endif%}
+
+		<h2> Historique : </h2>
+		{%for h in histo%}
+			<p> {{h}} </p>
+		{%endfor%}
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Gestion Outillage</title>
+	</head>
+	<style type="text/css">
+		table
+		{
+		    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+		}
+		td, th
+		{
+			width: 24% ;
+		    border: 1px solid black;
+		}
+		a.hover {
+			border:0;
+		}
+		a {
+			text-decoration: none;
+			color : black;
+		}
+	</style>
+
+	<body>
+
+		<h1> <a href='../'>Gestion Outillage </a></h1>
+
+		<h2> Effectuer un changement de stock pour l'outil {{outil.nom}} </h2>
+
+
+		<form method='post'> {%csrf_token%}
+		<input type='text' value='{{outil.id}}' name='outilID' style='display:none'>
+			<label id='etat'>Catégorie de changement : </label>
+			<select id='stockChoix' name='cat' size=1>
+				{% if outil.isDispo %}
+					<option selected>Sortie stock</option>
+				{%else%}
+					<option selected>Rentrée stock</option>
+				{%endif%}
+					<option>Vers Autre</option>
+			</select> <br>
+
+			<div id='sortie' {% if not outil.isDispo %} style='display:none'  {%endif%}>
+				<label id='etat'>Date : </label> <input type='date' name='dateSortie'><br>
+				<label id='etat'>Ouvrier : </label>  <select id='pignoufChoix' name='pignouf' size=1>
+					{%for p in pignoufList %}
+						<option>{{p}}</option>
+					{%endfor%}
+				</select><br>
+			</div>
+
+			<div id='entree' {% if outil.isDispo %} style='display:none' {%endif%}>
+				<label id='etat'>Date : </label> <input type='date' name='dateEntree'><br>
+			</div>
+
+			<div id='autre' style='display:none'>
+				<label id='etat'>Date : </label> <input type='date' name='dateAutre'><br>
+				<label id='etat'>Autre : </label>  <select id='autreChoix' name='autre' size=1>
+					{%for p in autreList %}
+						<option>{{p}}</option>
+					{%endfor%}
+				</select><br>
+			</div>
+
+			<input type='Submit' value='Valider'>
+
+		</form>
+
+		<script type="text/javascript">
+			function toggle(divName){
+				var divs = document.getElementsByTagName("div");
+				for (var i = 0; i < divs.length; i++){
+					divs[i].style.display = 'none';
+				};
+				var div = document.getElementById(divName);
+	   			if (div.style.display !== 'none') {
+	       			div.style.display = 'none';
+	    		}
+	    		else {
+	        		div.style.display = 'block';
+	    		}
+			}
+
+
+		var selectStock = document.getElementById('stockChoix');
+		selectStock.onchange = function(){
+			var index = this.selectedIndex;
+			if (index ==  0){
+				{% if outil.isDispo %}
+					toggle('sortie')
+				{%else%}
+					toggle('entree');
+				{%endif%}
+			}
+			else{
+				toggle('autre');
+			}
+		}
+		</script>
+
+
+
+
+
+
+	</body>
+</html>
