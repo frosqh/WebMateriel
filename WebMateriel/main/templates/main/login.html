@@ -24,20 +24,25 @@
 			text-decoration: none;
 			color : black;
 		}
+		div.polaroid {
+		  	width: 50%;
+		  	background-color: white;
+		  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		  	margin-left: 25%;
+		  	border-radius: 12px;
+		}
 	</style>
-
 	<body>
-
 		<h1> <a href='../'>Gestion Outillage </a></h1>
-
-		<h2> Ouvrier n° {{outil.id}} </h2>
-
-		<p> Nom : {{outil.nom}} </p>
-		<p> Prénom : {{outil.prenom}} </p>
-
-		<h2> Historique : </h2>
-		{%for h in histo%}
-			<p> {{h}} </p>
-		{%endfor%}
+		<div class="polaroid">
+			<center>
+				<h1>Log in</h1>
+				<form method = "post">
+					{%csrf_token%}
+					{{ form.as_p }}
+					<input class="inputspecial" type="submit" value="Submit">
+				</form>
+			</center>
+		</div>
 	</body>
 </html>

@@ -2,9 +2,11 @@
 
 from django.shortcuts import render
 from datetime import datetime
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from main.models import *
 from decimal import *
+from .templates.main.signin import LoginForm
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
@@ -335,6 +337,10 @@ def index(request):
 			request.session['filterDispo'] = ''
 		if ('supprAutre' in post):
 			request.session['filterAutre'] = ''
+		if ('login' in post):
+			return HttpResponseRedirect('./login')
+		if ('logout' in post):
+			logout(request)
 
 	else:
 		request.session['sort'] = 'ASC'
@@ -384,3 +390,28 @@ def ouvrier(request, id=-1):
 		return HttpResponse(status=404)
 	l = outilet[0]
 	return render(request, 'main/ouvrier.html', {'outil': l, 'histo': HistoLigne.objects.all().filter(pignoufID=l)})
+
+def loginn(request):
+	if (request.method=='POST'):
+		form = LoginForm(request.POST)
+		if form.is_valid():
+			username = form.cleaned_data['username']
+			password = form.cleaned_data['password']
+			user = authenticate(username=username,password=password)
+			if user is not None:
+				login(request,user)
+				clear(request)
+				return HttpResponseRedirect("./")
+			else:
+				return render(request, 'main/login.html', {'form' : form, 'message' : 'Authentication failed'})
+	else:
+		form = LoginForm()
+	if (request.user.is_authenticated):
+		request.session['message'] = 'You are already connected'
+		return HttpResponseRedirect('/')
+	clear(request)
+	return render(request, 'main/login.html', {'form' : form})
+
+def clear(request):
+	if ('message' in request.session):
+		request.session.pop('message')

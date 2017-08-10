@@ -1,8 +1,11 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>Gestion Outillage</title>
+		<link rel="icon" href="{% static 'main/IES.ico' %}" />
 	</head>
 	<style type="text/css">
 		table
@@ -26,7 +29,7 @@
 	<body>
 		<script> if ('{{message}}' != ''){alert('{{message}}')} 
 		</script>
-		<div style="text-align:right"><button align='right'>Connecter</button></div>
+		<div style="text-align:right">{%if not user.is_authenticated%}<form method='POST'>{%csrf_token%} <input type='hidden' name='login'> <input type='submit' align='right' value="Connecter"></form>{%else%}<form method='POST'>{%csrf_token%} <input type='hidden' name='logout'> <input type='submit' align='right' value="Déconnecter"></form>{%endif%}</div> 
 		<h1> Gestion Outillage </h1>
 		<p>
 			{% if 'filterFamille' in request.session and request.session.filterFamille != '' or 'filterSousFamille' in request.session and request.session.filterSousFamille != '' or 'filterFournisseur' in request.session and request.session.filterFournisseur != '' or 'filterPignouf' in request.session and request.session.filterPignouf != '' or 'filterDispo' in request.session and request.session.filterDispo != '' or 'filterAutre' in request.session and request.session.filterAutre != '' %}
@@ -56,7 +59,7 @@
 
 
 
-		<input type='button' id='hideshow' value='Ajouter'>		<input type='button' id='hideshoBis' value='Filtrer'> <form method= 'post' style ='display: inline'> {%csrf_token%} <input type='Submit' id='reset' name='reset' value='Reset'> <input type='text' style='display: none' name='reset' value='lorem ipsum'></form>
+		{%if user.is_authenticated%} <input type='button' id='hideshow' value='Ajouter'> {%endif%}		<input type='button' id='hideshoBis' value='Filtrer'> <form method= 'post' style ='display: inline'> {%csrf_token%} <input type='Submit' id='reset' name='reset' value='Reset'> <input type='text' style='display: none' name='reset' value='lorem ipsum'></form> 
 		<div id='content' style='display: none'> <input type='button' id='family' value='Une famille'> <input type='button' id='sous-family' value='Une sous-famille'> <input type='button' id='four' value='Un fournisseur'> <input type='button' id='pignouf' value='Un salarié'> <input type='button' id='outil' value='Un outil'> <input type='button' id='other' value='Une catégorie "autre"'></div>
 
 		<div id='contentbis' style='display: none'> <input type='button' id='familybis' value='Par famille'> <input type='button' id='sous-familybis' value='Par sous-famille'> <input type='button' id='fourbis' value='Par fournisseur'> <input type='button' id='pignoufbis' value='Par salarié'> <input type='button' id='outilbis' value='Par Disponibilité'> <input type='button' id='otherbis' value='Par catégorie "autre"'></div>
@@ -245,9 +248,9 @@
 						{{outil.autreId}}
 					{%endif%}
 					</center></td>
-					<td><form method='post'>{%csrf_token%} 
+					{%if user.is_authenticated%} <td><form method='post'>{%csrf_token%} 
 					<input type='text' name='outilID' value='{{outil.id}}' style='display:none'/>
-					<input name='edit' type=submit value='Modifier'></form></td>
+					<input name='edit' type=submit value='Modifier'></form></td> {%endif%}
 				</tr>
 			{%endfor%}
 		</table>
