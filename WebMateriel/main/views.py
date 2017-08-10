@@ -113,6 +113,8 @@ def index(request):
 				c = False
 				message = 'Merci de choisir un fournisseur'
 			prix = Decimal(post['price'])
+			date = post['dateEntreeB']
+			dateR = datetime.strptime(date,'%Y-%m-%d')
 			if c:
 				if nom!='':
 					if famille!='':
@@ -144,7 +146,7 @@ def index(request):
 										message = "L'outil ".decode('utf-8')
 										message += nom 
 										message += ' est ajouté'.decode('utf-8')
-										h = HistoLigne(stockChange='Entrée initiale',productID = out )
+										h = HistoLigne(creationDate=dateR, stockChange='Achat initial',productID = out )
 										h.save();
 								else:
 									message ='Veuillez entrer un fournisseur'

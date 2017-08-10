@@ -26,9 +26,8 @@
 	<body>
 		<script> if ('{{message}}' != ''){alert('{{message}}')} 
 		</script>
-
+		<div style="text-align:right"><button align='right'>Connecter</button></div>
 		<h1> Gestion Outillage </h1>
-
 		<p>
 			{% if 'filterFamille' in request.session and request.session.filterFamille != '' or 'filterSousFamille' in request.session and request.session.filterSousFamille != '' or 'filterFournisseur' in request.session and request.session.filterFournisseur != '' or 'filterPignouf' in request.session and request.session.filterPignouf != '' or 'filterDispo' in request.session and request.session.filterDispo != '' or 'filterAutre' in request.session and request.session.filterAutre != '' %}
 				Filtré par :
@@ -122,8 +121,9 @@
 						<OPTION > {{f}}</OPTION>
 					{%endfor%}
 				</SELECT><br>
-				<label id='price'>Prix :</label>
-				<input type='number' name='price' step='0.01'>
+				<label id='price'>Prix :</label><br>
+				<input type='number' name='price' step='0.01'><br>
+				<label id='etat'>Date : </label> <input type='date' name='dateEntreeB'><br>
 				<input type="Submit" value="Ajouter" id="AjoutOutil">
 			</form>
 		</div>
@@ -232,7 +232,11 @@
 						<td style='color:red'><center>✗</center></td>
 					{%endif%}
 					{% if not outil.isDispo and outil.autreId == None%}
-						<td><center><a href="/ouvrier/{{outil.emprunteur.id}}">{{outil.emprunteur}}</a></center></td>
+						{%if not outil.isBuy%}
+							<td><center>Pas acheté</center></td>
+						{%else%}
+							<td><center><a href="/ouvrier/{{outil.emprunteur.id}}">{{outil.emprunteur}}</a></center></td>
+						{%endif%}
 					{%else%}
 						<td></td>
 					{%endif%}

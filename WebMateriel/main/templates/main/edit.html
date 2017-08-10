@@ -34,12 +34,16 @@
 		<input type='text' value='{{outil.id}}' name='outilID' style='display:none'>
 			<label id='etat'>Catégorie de changement : </label>
 			<select id='stockChoix' name='cat' size=1>
-				{% if outil.isDispo %}
-					<option selected>Sortie stock</option>
+				{%if not outil.isBuy%}
+					<option> Achat initial </option>
 				{%else%}
-					<option selected>Rentrée stock</option>
-				{%endif%}
+					{% if outil.isDispo %}
+						<option selected>Sortie stock</option>
+					{%else%}
+						<option selected>Rentrée stock</option>
+					{%endif%}
 					<option>Vers Autre</option>
+				{%endif%}
 			</select> <br>
 
 			<div id='sortie' {% if not outil.isDispo %} style='display:none'  {%endif%}>
@@ -51,7 +55,7 @@
 				</select><br>
 			</div>
 
-			<div id='entree' {% if outil.isDispo %} style='display:none' {%endif%}>
+			<div id='entree' {% if outil.isDispo%} style='display:none' {%endif%}>
 				<label id='etat'>Date : </label> <input type='date' name='dateEntree'><br>
 			</div>
 
@@ -87,7 +91,7 @@
 		var selectStock = document.getElementById('stockChoix');
 		selectStock.onchange = function(){
 			var index = this.selectedIndex;
-			if (index ==  0){
+			if (index ==  1 ){
 				{% if outil.isDispo %}
 					toggle('sortie')
 				{%else%}
@@ -95,7 +99,12 @@
 				{%endif%}
 			}
 			else{
-				toggle('autre');
+				if (index == 0){
+					toggle('achat')
+				}
+				else{
+					toggle('autre');
+				}
 			}
 		}
 		</script>

@@ -26255,3 +26255,996 @@ Not Found: /favicon.ico
 [10/Aug/2017 06:01:00] "GET /favicon.ico HTTP/1.1" 404 2378
 [10/Aug/2017 06:01:06] "GET / HTTP/1.1" 200 18142
 [10/Aug/2017 06:01:12] "POST / HTTP/1.1" 200 18142
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 05:57:18
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:14:51
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:14:52
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+[10/Aug/2017 06:16:37] "GET / HTTP/1.1" 200 18142
+[10/Aug/2017 06:16:40] "GET / HTTP/1.1" 200 18142
+[10/Aug/2017 06:16:42] "GET /outil/1 HTTP/1.1" 200 798
+[10/Aug/2017 06:16:45] "GET / HTTP/1.1" 200 18142
+[10/Aug/2017 06:16:46] "POST / HTTP/1.1" 200 2277
+[10/Aug/2017 06:16:52] "GET / HTTP/1.1" 200 18142
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:14:54
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:17:06
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:18:05] "POST / HTTP/1.1" 200 18818
+[10/Aug/2017 06:18:09] "GET /outil/3 HTTP/1.1" 200 842
+[10/Aug/2017 06:18:11] "GET / HTTP/1.1" 200 18744
+[10/Aug/2017 06:18:14] "POST / HTTP/1.1" 200 2282
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 226, in index
+    h.save()
+UnboundLocalError: local variable 'h' referenced before assignment
+[10/Aug/2017 06:18:19] "POST / HTTP/1.1" 500 74997
+[10/Aug/2017 06:19:37] "GET / HTTP/1.1" 200 18743
+[10/Aug/2017 06:19:53] "GET / HTTP/1.1" 200 18742
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:17:08
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7f5bd71657d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 264
+    if ('name' in post and post['name'] == 'trinom'):
+     ^
+IndentationError: expected an indented block
+Unhandled exception in thread started by <function wrapper at 0x7f2fb3fa87d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 264
+    if ('name' in post and post['name'] == 'trinom'):
+     ^
+IndentationError: expected an indented block
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:22:44
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:22:46
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:22:56
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7f8a4d1417d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 273
+    if ('name' in post and post['name'] == 'trinom'):
+    ^
+IndentationError: expected an indented block
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:23:52
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:23:57] "GET / HTTP/1.1" 200 18742
+[10/Aug/2017 06:24:00] "POST / HTTP/1.1" 200 2478
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 226, in index
+    h.save()
+UnboundLocalError: local variable 'h' referenced before assignment
+[10/Aug/2017 06:24:04] "POST / HTTP/1.1" 500 75162
+[10/Aug/2017 06:24:21] "GET / HTTP/1.1" 200 18742
+[10/Aug/2017 06:24:25] "POST / HTTP/1.1" 200 2478
+[10/Aug/2017 06:25:53] "GET / HTTP/1.1" 200 18742
+[10/Aug/2017 06:25:55] "POST / HTTP/1.1" 200 2458
+[10/Aug/2017 06:26:12] "GET / HTTP/1.1" 200 18742
+[10/Aug/2017 06:26:18] "POST / HTTP/1.1" 200 2458
+[10/Aug/2017 06:26:25] "POST / HTTP/1.1" 200 2458
+[10/Aug/2017 06:26:25] "POST / HTTP/1.1" 200 2458
+[10/Aug/2017 06:26:34] "GET / HTTP/1.1" 200 18742
+[10/Aug/2017 06:26:35] "POST / HTTP/1.1" 200 2458
+[10/Aug/2017 06:26:41] "POST / HTTP/1.1" 200 2480
+[10/Aug/2017 06:26:44] "POST / HTTP/1.1" 200 18742
+[10/Aug/2017 06:26:47] "POST / HTTP/1.1" 200 2480
+[10/Aug/2017 06:26:50] "POST / HTTP/1.1" 200 18742
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:23:55
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:27:05] "POST / HTTP/1.1" 200 2480
+/home/frosqh/.local/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1451: RuntimeWarning: DateTimeField HistoLigne.creationDate received a naive datetime (2017-08-14 00:00:00) while time zone support is active.
+  RuntimeWarning)
+[10/Aug/2017 06:27:14] "POST / HTTP/1.1" 200 18742
+[10/Aug/2017 06:27:16] "POST / HTTP/1.1" 200 18742
+[10/Aug/2017 06:27:17] "GET /outil/3 HTTP/1.1" 200 986
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:27:04
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:27:39
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:27:44] "GET / HTTP/1.1" 200 18742
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:27:42
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:27:50] "GET / HTTP/1.1" 200 18742
+[10/Aug/2017 06:27:52] "GET / HTTP/1.1" 200 18742
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:27:48
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7fd9bf7a87d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 275
+    outil.isDispo = True
+    ^
+IndentationError: unexpected indent
+Unhandled exception in thread started by <function wrapper at 0x7f3b63e247d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 275
+    outil.isDispo = True
+    ^
+IndentationError: unexpected indent
+[10/Aug/2017 06:28:03] "GET / HTTP/1.1" 200 18742
+[10/Aug/2017 06:28:04] "POST / HTTP/1.1" 200 2480
+/home/frosqh/.local/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1451: RuntimeWarning: DateTimeField HistoLigne.creationDate received a naive datetime (2017-08-12 00:00:00) while time zone support is active.
+  RuntimeWarning)
+[10/Aug/2017 06:28:08] "POST / HTTP/1.1" 200 18701
+[10/Aug/2017 06:28:10] "GET /outil/3 HTTP/1.1" 200 1018
+[10/Aug/2017 06:28:12] "GET / HTTP/1.1" 200 18701
+Error: That port is already in use.
+[10/Aug/2017 06:29:30] "GET / HTTP/1.1" 200 16634
+[10/Aug/2017 06:29:33] "GET / HTTP/1.1" 200 16634
+[10/Aug/2017 06:29:45] "POST / HTTP/1.1" 200 16842
+[10/Aug/2017 06:29:59] "POST / HTTP/1.1" 200 17016
+[10/Aug/2017 06:30:05] "POST / HTTP/1.1" 200 17108
+[10/Aug/2017 06:30:12] "POST / HTTP/1.1" 200 17141
+[10/Aug/2017 06:30:20] "POST / HTTP/1.1" 200 17170
+[10/Aug/2017 06:30:41] "POST / HTTP/1.1" 200 17108
+[10/Aug/2017 06:30:56] "POST / HTTP/1.1" 200 17108
+[10/Aug/2017 06:31:09] "POST / HTTP/1.1" 200 17776
+[10/Aug/2017 06:31:33] "GET /outil/1 HTTP/1.1" 200 839
+[10/Aug/2017 06:31:39] "GET / HTTP/1.1" 200 17708
+[10/Aug/2017 06:31:40] "GET /outil/1 HTTP/1.1" 200 839
+[10/Aug/2017 06:32:02] "GET / HTTP/1.1" 200 17708
+[10/Aug/2017 06:32:03] "POST / HTTP/1.1" 200 2553
+/home/frosqh/.local/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1451: RuntimeWarning: DateTimeField HistoLigne.creationDate received a naive datetime (2017-08-10 00:00:00) while time zone support is active.
+  RuntimeWarning)
+[10/Aug/2017 06:32:12] "POST / HTTP/1.1" 200 17667
+[10/Aug/2017 06:32:14] "GET /outil/1 HTTP/1.1" 200 865
+[10/Aug/2017 06:32:53] "GET / HTTP/1.1" 200 17667
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:28:01
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:35:11
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:35:14
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:35:27
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:35:30
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:35:41
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:35:43
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:36:25] "GET / HTTP/1.1" 200 17750
+Error: That port is already in use.
+[10/Aug/2017 06:36:31] "GET / HTTP/1.1" 200 17750
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:35:46
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:36:57
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7f1d0d15f7d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 116
+    date = post['dateEntree']
+    ^
+IndentationError: unexpected indent
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:37:09
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:37:11
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:37:17
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:37:32] "GET / HTTP/1.1" 200 17754
+/home/frosqh/.local/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1451: RuntimeWarning: DateTimeField HistoLigne.creationDate received a naive datetime (2017-08-19 00:00:00) while time zone support is active.
+  RuntimeWarning)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 209, in index
+    outilID = post['outilID']
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'outilID'"
+[10/Aug/2017 06:37:56] "POST / HTTP/1.1" 500 81767
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:37:29
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:38:28] "GET / HTTP/1.1" 200 18303
+[10/Aug/2017 06:38:30] "GET /outil/2 HTTP/1.1" 200 778
+[10/Aug/2017 06:38:33] "GET / HTTP/1.1" 200 18303
+/home/frosqh/.local/lib/python2.7/site-packages/django/db/models/fields/__init__.py:1451: RuntimeWarning: DateTimeField HistoLigne.creationDate received a naive datetime (2017-08-17 00:00:00) while time zone support is active.
+  RuntimeWarning)
+[10/Aug/2017 06:39:51] "POST / HTTP/1.1" 200 18907
+[10/Aug/2017 06:39:57] "GET /outil/2 HTTP/1.1" 200 778
+[10/Aug/2017 06:40:03] "GET / HTTP/1.1" 200 18853
+[10/Aug/2017 06:40:06] "POST / HTTP/1.1" 200 19029
+[10/Aug/2017 06:40:09] "POST / HTTP/1.1" 200 18853
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:38:24
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7fe7e941d758>
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 250, in raise_last_exception
+    six.reraise(*_exception)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.ready()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/contrib/admin/apps.py", line 23, in ready
+    self.module.autodiscover()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/module_loading.py", line 50, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/admin.py", line 2, in <module>
+    from .models import Post
+ImportError: cannot import name Post
+Unhandled exception in thread started by <function wrapper at 0x7fe814a00758>
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 250, in raise_last_exception
+    six.reraise(*_exception)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.ready()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/contrib/admin/apps.py", line 23, in ready
+    self.module.autodiscover()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/module_loading.py", line 50, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/admin.py", line 2, in <module>
+    from .models import Post
+ImportError: cannot import name Post
+Unhandled exception in thread started by <function wrapper at 0x7f5f6d8dc758>
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 250, in raise_last_exception
+    six.reraise(*_exception)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.ready()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/contrib/admin/apps.py", line 23, in ready
+    self.module.autodiscover()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/contrib/admin/__init__.py", line 26, in autodiscover
+    autodiscover_modules('admin', register_to=site)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/module_loading.py", line 50, in autodiscover_modules
+    import_module('%s.%s' % (app_config.name, module_to_search))
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/admin.py", line 4, in <module>
+    admin.site.register(Post)
+NameError: name 'Post' is not defined
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:43:38
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Not Found: /admin
+[10/Aug/2017 06:43:54] "GET /admin HTTP/1.1" 404 2360
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:43:39
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7f78125d47d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^admin/', admin.site.urls),
+NameError: name 'admin' is not defined
+Unhandled exception in thread started by <function wrapper at 0x7f1958ef07d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^admin/', admin.site.urls),
+NameError: name 'admin' is not defined
+Unhandled exception in thread started by <function wrapper at 0x7f13e0f3d7d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^admin/', admin.site.urls),
+NameError: name 'admin' is not defined
+Unhandled exception in thread started by <function wrapper at 0x7f6ae30767d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^admin/', admin.site.urls),
+NameError: name 'admin' is not defined
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:45:02
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:45:08] "GET /admin HTTP/1.1" 301 0
+[10/Aug/2017 06:45:08] "GET /admin/ HTTP/1.1" 302 0
+[10/Aug/2017 06:45:09] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650
+[10/Aug/2017 06:45:09] "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+[10/Aug/2017 06:45:09] "GET /static/admin/css/base.css HTTP/1.1" 200 16066
+[10/Aug/2017 06:45:09] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[10/Aug/2017 06:45:09] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[10/Aug/2017 06:45:09] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[10/Aug/2017 06:45:11] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1812
+[10/Aug/2017 06:45:12] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[10/Aug/2017 06:46:10] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[10/Aug/2017 06:46:10] "GET /admin/ HTTP/1.1" 200 3403
+[10/Aug/2017 06:46:10] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[10/Aug/2017 06:46:10] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[10/Aug/2017 06:46:10] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[10/Aug/2017 06:46:15] "GET /admin/auth/group/add/ HTTP/1.1" 200 7414
+[10/Aug/2017 06:46:15] "GET /static/admin/js/core.js HTTP/1.1" 200 7976
+[10/Aug/2017 06:46:15] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[10/Aug/2017 06:46:15] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6591
+[10/Aug/2017 06:46:15] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+[10/Aug/2017 06:46:15] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:46:15] "GET /static/admin/css/forms.css HTTP/1.1" 200 8173
+[10/Aug/2017 06:46:15] "GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+[10/Aug/2017 06:46:15] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+[10/Aug/2017 06:46:15] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 5755
+[10/Aug/2017 06:46:15] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12389
+[10/Aug/2017 06:46:15] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[10/Aug/2017 06:46:15] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+[10/Aug/2017 06:46:15] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[10/Aug/2017 06:46:15] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[10/Aug/2017 06:46:15] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+[10/Aug/2017 06:46:16] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[10/Aug/2017 06:46:16] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[10/Aug/2017 06:46:16] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[10/Aug/2017 06:46:16] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[10/Aug/2017 06:46:33] "GET /admin/ HTTP/1.1" 200 3403
+[10/Aug/2017 06:46:35] "GET /admin/auth/user/add/ HTTP/1.1" 200 5502
+[10/Aug/2017 06:46:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:47:02] "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+[10/Aug/2017 06:47:02] "GET /admin/auth/user/2/change/ HTTP/1.1" 200 14985
+[10/Aug/2017 06:47:02] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:47:02] "GET /static/admin/js/calendar.js HTTP/1.1" 200 7790
+[10/Aug/2017 06:47:02] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20529
+[10/Aug/2017 06:47:03] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[10/Aug/2017 06:47:03] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[10/Aug/2017 06:47:03] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[10/Aug/2017 06:47:19] "POST /admin/auth/user/2/change/ HTTP/1.1" 302 0
+[10/Aug/2017 06:47:19] "GET /admin/auth/user/ HTTP/1.1" 200 7051
+[10/Aug/2017 06:47:19] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[10/Aug/2017 06:47:19] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:47:19] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[10/Aug/2017 06:47:19] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[10/Aug/2017 06:47:19] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[10/Aug/2017 06:47:24] "GET /admin/auth/user/2/change/ HTTP/1.1" 200 14793
+[10/Aug/2017 06:47:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:47:31] "GET /admin/auth/user/2/delete/ HTTP/1.1" 200 2990
+[10/Aug/2017 06:47:31] "GET /static/admin/js/cancel.js HTTP/1.1" 200 204
+[10/Aug/2017 06:47:32] "POST /admin/auth/user/2/delete/ HTTP/1.1" 302 0
+[10/Aug/2017 06:47:32] "GET /admin/auth/user/ HTTP/1.1" 200 6603
+[10/Aug/2017 06:47:32] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:47:35] "GET /admin/auth/user/1/change/ HTTP/1.1" 200 14868
+[10/Aug/2017 06:47:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:47:38] "GET /admin/auth/user/1/delete/ HTTP/1.1" 200 3209
+[10/Aug/2017 06:47:44] "POST /admin/auth/user/1/delete/ HTTP/1.1" 302 0
+[10/Aug/2017 06:47:44] "GET /admin/auth/user/ HTTP/1.1" 302 0
+[10/Aug/2017 06:47:44] "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 1815
+[10/Aug/2017 06:50:01] "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 1670
+[10/Aug/2017 06:50:09] "POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 302 0
+[10/Aug/2017 06:50:09] "GET /admin/auth/user/ HTTP/1.1" 200 6461
+[10/Aug/2017 06:50:09] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:50:19] "GET /admin/ HTTP/1.1" 200 3403
+[10/Aug/2017 06:50:22] "GET /admin/auth/user/add/ HTTP/1.1" 200 5502
+[10/Aug/2017 06:50:22] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:50:29] "GET /admin/ HTTP/1.1" 200 3403
+[10/Aug/2017 06:50:35] "GET /admin/auth/user/add/ HTTP/1.1" 200 5502
+[10/Aug/2017 06:50:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:50:44] "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+[10/Aug/2017 06:50:44] "GET /admin/auth/user/4/change/ HTTP/1.1" 200 14982
+[10/Aug/2017 06:50:44] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:51:48] "GET /admin/auth/user/4/password/ HTTP/1.1" 200 2996
+[10/Aug/2017 06:51:48] "GET /admin/jsi18n/ HTTP/1.1" 200 3217
+[10/Aug/2017 06:51:51] "GET /admin/logout/ HTTP/1.1" 200 1010
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:45:05
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7f4d6f7cb7d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 21
+    url(r'^', include('django.contrib.auth.urls'));
+                                                  ^
+SyntaxError: invalid syntax
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:56:59
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 10, 2017 - 06:57:01
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[10/Aug/2017 06:57:28] "GET / HTTP/1.1" 200 18855
+[2017-08-10 06:57:28,260] - Broken pipe from ('127.0.0.1', 35556)
+
+[10/Aug/2017 06:57:28] "GET / HTTP/1.1" 200 18855
+[10/Aug/2017 06:57:31] "GET /login HTTP/1.1" 301 0
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: registration/login.html
+[10/Aug/2017 06:57:32] "GET /login/ HTTP/1.1" 500 86215
+Error: That port is already in use.
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/template/loader.py", line 53, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+TemplateDoesNotExist: registration/login.html
+[10/Aug/2017 06:58:03] "GET /login/ HTTP/1.1" 500 86350
+[10/Aug/2017 07:01:20] "GET / HTTP/1.1" 200 18895
+[2017-08-10 07:01:20,569] - Broken pipe from ('127.0.0.1', 35704)
+
+[10/Aug/2017 07:01:20] "GET / HTTP/1.1" 200 18895
+[10/Aug/2017 07:01:38] "GET / HTTP/1.1" 200 18895
+[10/Aug/2017 07:01:41] "GET / HTTP/1.1" 200 18895
+[10/Aug/2017 07:01:54] "GET / HTTP/1.1" 200 18916
+[10/Aug/2017 07:02:39] "GET / HTTP/1.1" 200 18926
+[10/Aug/2017 07:02:56] "GET / HTTP/1.1" 200 18930
