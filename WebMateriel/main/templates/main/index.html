@@ -27,9 +27,10 @@
 	</style>
 
 	<body>
+		<p> <img src="{%static 'main/Ies.jpg'%}" height='150' width='150' style='float:left'/>
 		<script> if ('{{message}}' != ''){alert('{{message}}')} 
 		</script>
-		<div style="text-align:right">{%if not user.is_authenticated%}<form method='POST'>{%csrf_token%} <input type='hidden' name='login'> <input type='submit' align='right' value="Connecter"></form>{%else%}<form method='POST'>{%csrf_token%} <input type='hidden' name='logout'> <input type='submit' align='right' value="Déconnecter"></form>{%endif%}</div> 
+		<div id ='log' style="text-align:right; float:right">{%if not user.is_authenticated%}<form method='POST'>{%csrf_token%} <input type='hidden' name='login'> <input type='submit' align='right' value="Connecter" name='logButton'></form>{%else%}<form method='POST'>{%csrf_token%} <input type='hidden' name='logout'> <input type='submit' align='right' value="Déconnecter" name='logButton'></form>{%endif%}</div> </p><br><br><br><br><br><br><br><br>
 		<h1> Gestion Outillage </h1>
 		<p>
 			{% if 'filterFamille' in request.session and request.session.filterFamille != '' or 'filterSousFamille' in request.session and request.session.filterSousFamille != '' or 'filterFournisseur' in request.session and request.session.filterFournisseur != '' or 'filterPignouf' in request.session and request.session.filterPignouf != '' or 'filterDispo' in request.session and request.session.filterDispo != '' or 'filterAutre' in request.session and request.session.filterAutre != '' %}
@@ -279,7 +280,9 @@
 	   					button.value = 'Ajouter'
 	   					var divs = document.getElementsByTagName("div");
 						for (var i = 0; i < divs.length; i++){
-							divs[i].style.display = 'none';
+							if (divs[i].id !== "log"){
+								divs[i].style.display = 'none';
+							}
 						}
 	   				}
 	       			div.style.display = 'none';
@@ -477,7 +480,9 @@
 			if (divName !== 'contentbis'){
 				var divs = document.getElementsByTagName("div");
 				for (var i = 0; i < divs.length; i++){
-					divs[i].style.display = 'none';
+					if (divs[i].id !== "log"){
+						divs[i].style.display = 'none';
+					}
 				}
 				toggleBis('contentbis');
 			}
