@@ -32,6 +32,7 @@
 		<p> Nom : {{outil.nom}} </p>
 		<p> Numéro de Série : {{outil.numSerie}} </p>
 		<p> Fournisseur : {{outil.fournisseurID}} </p>
+		<p> Prix : {{outil.price}} </p>
 		<p> Disponibilité : {%if outil.isDispo%} ✓ {%else%} ✗ {%endif%}</p>
 		{% if not outil.isDispo%}
 			{%if not outil.autreId != None%}

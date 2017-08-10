@@ -4,6 +4,7 @@ from django.shortcuts import render
 from datetime import datetime
 from django.http import HttpResponse
 from main.models import *
+from decimal import *
 
 # Create your views here.
 
@@ -29,29 +30,35 @@ def index(request):
 			else:
 				message = "Veuillez entrer un nom de famille"
 		if ('nomAddSousFamille' in post):
+			c = True
 			nom = post['nomAddSousFamille']
-			nomFamille = post['nomFamille']
-			if nom != '':
-				for f in SousFamille.objects.all():
-					if (f.nom == nom):
-						b = False;
-						message = 'Cette sous-famille existe déjà'
-				if b:
-					if nomFamille!='':
-						fl = Famille.objects.all().filter(nom=nomFamille)
-						if len(fl)>=1:
-							f = fl[0]
-							n = f.nom
-							sf = SousFamille(nom=nom, familleID=f);
-							nf = sf.familleID.nom
-							sf.save()
-							message = 'La sous-famille '
-							message += nom
-							message += ' est ajoutée'.decode('utf-8')
-					else:
-						message='Merci de sélectionner une famille'
+			if 'nomFamille' in post:
+				nomFamille = post['nomFamille']
 			else:
-				message='Veuillez entrer un nom de sous-famille'
+				c = False
+				message = 'Merci de choisir une famille'
+			if c:
+				if nom != '':
+					for f in SousFamille.objects.all():
+						if (f.nom == nom):
+							b = False;
+							message = 'Cette sous-famille existe déjà'
+					if b:
+						if nomFamille!='':
+							fl = Famille.objects.all().filter(nom=nomFamille)
+							if len(fl)>=1:
+								f = fl[0]
+								n = f.nom
+								sf = SousFamille(nom=nom, familleID=f);
+								nf = sf.familleID.nom
+								sf.save()
+								message = 'La sous-famille '
+								message += nom
+								message += ' est ajoutée'.decode('utf-8')
+						else:
+							message='Merci de sélectionner une famille'
+				else:
+					message='Veuillez entrer un nom de sous-famille'
 		if ('nomAddFournisseur' in post):
 			nom = post['nomAddFournisseur']
 			if nom!='':
@@ -87,53 +94,68 @@ def index(request):
 			else:
 				message='Veuillez entrer un nom de famille'
 		if ('nomAddOutil' in post):
+			c = True
 			nom = post['nomAddOutil']
-			famille = post['famille']
-			sousfamille = post['sousfamille']
-			numSerie = post['numSerie']
-			fournisseur = post['fournisseur']
-			if nom!='':
-				if famille!='':
-					if sousfamille!='':
-						if numSerie!='':
-							if fournisseur!='':
-								fl = Famille.objects.all().filter(nom=famille)
-								sfl = SousFamille.objects.all().filter(nom=sousfamille)
-								fol = Fournisseur.objects.all().filter(nom=fournisseur)
-								if len(fl)<1:
-									b = False
-								else:
-									fam = fl[0]
-								if len(sfl)<1:
-									b = False
-								else:
-									sfam = sfl[0]
-								if len(fol)<1:
-									b = False
-								else:
-									four = fol[0]
-								for o in Outil.objects.all():
-									if o.nom == nom and o.numSerie == numSerie:
-										b = False
-										message='Cet outil existe déjà'
-								if b:
-									out = Outil(nom=nom, numSerie=numSerie, famille=fam, sousfamille=sfam, fournisseurID=four)
-									out.save()
-									message = "L'outil ".decode('utf-8')
-									message += nom 
-									message += ' est ajouté'.decode('utf-8')
-									h = HistoLigne(stockChange='Entrée initiale',productID = out )
-									h.save();
-							else:
-								message ='Veuillez entrer un fournisseur'
-						else:
-							message = 'Veuillez entrer un numéro de série'
-					else:
-						message ='Veuillez sélectionnez une sous-famille'
-				else:
-					message ='Veuillez sélectionnez une famille'
+			if 'famille' in post:
+				famille = post['famille']
 			else:
-				message ='Veuillez entrer un nom'
+				c = False
+				message = 'Merci de choisir une famille'
+			if 'sousfamille' in post:
+				sousfamille = post['sousfamille']
+			else:
+				c = False
+				message = 'Merci de choisir une sous-famille'
+			numSerie = post['numSerie']
+			if 'fournisseur' in post:
+				fournisseur = post['fournisseur']
+			else:
+				c = False
+				message = 'Merci de choisir un fournisseur'
+			prix = Decimal(post['price'])
+			if c:
+				if nom!='':
+					if famille!='':
+						if sousfamille!='':
+							if numSerie!='':
+								if fournisseur!='':
+									fl = Famille.objects.all().filter(nom=famille)
+									sfl = SousFamille.objects.all().filter(nom=sousfamille)
+									fol = Fournisseur.objects.all().filter(nom=fournisseur)
+									if len(fl)<1:
+										b = False
+									else:
+										fam = fl[0]
+									if len(sfl)<1:
+										b = False
+									else:
+										sfam = sfl[0]
+									if len(fol)<1:
+										b = False
+									else:
+										four = fol[0]
+									for o in Outil.objects.all():
+										if o.nom == nom and o.numSerie == numSerie:
+											b = False
+											message='Cet outil existe déjà'
+									if b:
+										out = Outil(nom=nom, numSerie=numSerie, famille=fam, sousfamille=sfam, fournisseurID=four, price=prix)
+										out.save()
+										message = "L'outil ".decode('utf-8')
+										message += nom 
+										message += ' est ajouté'.decode('utf-8')
+										h = HistoLigne(stockChange='Entrée initiale',productID = out )
+										h.save();
+								else:
+									message ='Veuillez entrer un fournisseur'
+							else:
+								message = 'Veuillez entrer un numéro de série'
+						else:
+							message ='Veuillez sélectionnez une sous-famille'
+					else:
+						message ='Veuillez sélectionnez une famille'
+				else:
+					message ='Veuillez entrer un nom'
 		if ('nomAddAutre' in post):
 			nom = post['nomAddAutre']
 			if nom!='':
@@ -167,7 +189,6 @@ def index(request):
 			pignouf = None
 			pignoufet = Pignouf.objects.all()
 			for p in pignoufet:
-				#raise Exception(str(p)+pignoufName)
 				if str(p) == pignoufName:
 
 					pignouf = p

@@ -25788,3 +25788,470 @@ August 09, 2017 - 14:14:54
 Django version 1.11.3, using settings 'WebMateriel.settings'
 Starting development server at http://localhost:8888/
 Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:34:30
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:47:22
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+[09/Aug/2017 14:49:58] "GET / HTTP/1.1" 200 16626
+[09/Aug/2017 14:50:51] "GET / HTTP/1.1" 200 16634
+[09/Aug/2017 14:50:52] "POST / HTTP/1.1" 200 16634
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 91, in index
+    famille = post['famille']
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'famille'"
+[09/Aug/2017 14:51:01] "POST / HTTP/1.1" 500 77640
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:47:30
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[09/Aug/2017 14:51:41] "GET / HTTP/1.1" 200 16634
+[09/Aug/2017 14:51:45] "POST / HTTP/1.1" 200 16634
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 91, in index
+    famille = post['famille']
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'famille'"
+[09/Aug/2017 14:51:50] "POST / HTTP/1.1" 500 77637
+[09/Aug/2017 14:52:01] "GET / HTTP/1.1" 200 16634
+[09/Aug/2017 14:52:05] "POST / HTTP/1.1" 200 16843
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 91, in index
+    famille = post['famille']
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'famille'"
+[09/Aug/2017 14:52:09] "POST / HTTP/1.1" 500 77622
+[09/Aug/2017 14:52:43] "GET / HTTP/1.1" 200 16777
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 92, in index
+    sousfamille = post['sousfamille']
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'sousfamille'"
+[09/Aug/2017 14:52:47] "POST / HTTP/1.1" 500 78047
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:51:37
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:53:26
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7fcdf6fd37d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 95
+    sousfamille = post['sousfamille']
+              ^
+IndentationError: expected an indented block
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:57:48
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:58:19
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[09/Aug/2017 14:58:24] "GET / HTTP/1.1" 200 16777
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 102, in index
+    fournisseur = post['fournisseur']
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'fournisseur'"
+[09/Aug/2017 14:58:29] "POST / HTTP/1.1" 500 78389
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:58:21
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:58:54
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[09/Aug/2017 14:59:08] "GET / HTTP/1.1" 200 16777
+[09/Aug/2017 14:59:11] "POST / HTTP/1.1" 200 16839
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 14:59:06
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:01:42
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:01:46
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[09/Aug/2017 15:01:55] "GET / HTTP/1.1" 200 16777
+[09/Aug/2017 15:01:57] "POST / HTTP/1.1" 200 16833
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:01:53
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:02:42
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:02:44
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[09/Aug/2017 15:02:58] "GET / HTTP/1.1" 200 16768
+[09/Aug/2017 15:03:05] "POST / HTTP/1.1" 200 16768
+[09/Aug/2017 15:03:07] "POST / HTTP/1.1" 200 16768
+[09/Aug/2017 15:03:10] "POST / HTTP/1.1" 200 16934
+[09/Aug/2017 15:03:20] "POST / HTTP/1.1" 200 17104
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 115, in index
+    raise Exception(prix)
+Exception: 55
+[09/Aug/2017 15:03:36] "POST / HTTP/1.1" 500 74922
+[09/Aug/2017 15:03:58] "POST / HTTP/1.1" 200 17094
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 115, in index
+    raise Exception(prix)
+Exception: 55.63
+[09/Aug/2017 15:04:08] "POST / HTTP/1.1" 500 74952
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:02:54
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:05:31
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:05:34
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:06:42
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:06:51
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:06:53
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:06:55
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+[09/Aug/2017 15:07:01] "GET / HTTP/1.1" 200 17030
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 114, in index
+    prix = Decimal(post['price'])
+NameError: global name 'Decimal' is not defined
+[09/Aug/2017 15:07:19] "POST / HTTP/1.1" 500 75079
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 09, 2017 - 15:06:58
+Django version 1.11.3, using settings 'WebMateriel.settings'
+Starting development server at http://localhost:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7f924df167d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 7, in <module>
+    from Decimal import *
+ImportError: No module named Decimal
+Unhandled exception in thread started by <function wrapper at 0x7f90db7767d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 7, in <module>
+    from Decimal import *
+ImportError: No module named Decimal
+Unhandled exception in thread started by <function wrapper at 0x7f65a2ba37d0>
+Performing system checks...
+
+Traceback (most recent call last):
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/autoreload.py", line 227, in wrapper
+    fn(*args, **kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/WebMateriel/urls.py", line 19, in <module>
+    url(r'^', include('main.urls')),
+  File "/home/frosqh/.local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/urls.py", line 2, in <module>
+    from . import views
+  File "/home/frosqh/workspace/WebMateriel/WebMateriel/main/views.py", line 7, in <module>
+    from Decimal import *
+ImportError: No module named Decimal
+Error: That port is already in use.
+[09/Aug/2017 15:07:51] "GET / HTTP/1.1" 200 17030
+[09/Aug/2017 15:08:03] "POST / HTTP/1.1" 200 17656
+[09/Aug/2017 15:08:07] "GET /outil/1 HTTP/1.1" 200 774
+[09/Aug/2017 15:08:09] "GET / HTTP/1.1" 200 17588
+[09/Aug/2017 15:08:40] "GET /outil/1 HTTP/1.1" 200 798
+[09/Aug/2017 15:08:45] "GET / HTTP/1.1" 200 17588
+[09/Aug/2017 15:09:47] "POST / HTTP/1.1" 200 18198
+[09/Aug/2017 15:09:49] "GET /outil/2 HTTP/1.1" 200 788
+[10/Aug/2017 06:01:00] "GET /outil/2 HTTP/1.1" 200 788
+Not Found: /favicon.ico
+[10/Aug/2017 06:01:00] "GET /favicon.ico HTTP/1.1" 404 2378
+[10/Aug/2017 06:01:06] "GET / HTTP/1.1" 200 18142
+[10/Aug/2017 06:01:12] "POST / HTTP/1.1" 200 18142

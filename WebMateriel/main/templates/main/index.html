@@ -104,7 +104,7 @@
 				<label id='familleSelect'>Famille :</label><br>
 				<SELECT id='familleSel' name='famille' size='3'>
 					{%for f in famille%}
-						<OPTION > {{f}}</OPTION>
+						<OPTION> {{f}}</OPTION>
 					{%endfor%}
 				</SELECT><br>
 
@@ -122,6 +122,8 @@
 						<OPTION > {{f}}</OPTION>
 					{%endfor%}
 				</SELECT><br>
+				<label id='price'>Prix :</label>
+				<input type='number' name='price' step='0.01'>
 				<input type="Submit" value="Ajouter" id="AjoutOutil">
 			</form>
 		</div>

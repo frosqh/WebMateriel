@@ -37,7 +37,7 @@ class Outil(models.Model):
 	famille = models.ForeignKey(Famille, on_delete=models.CASCADE, blank=True)
 	sousfamille = models.ForeignKey(SousFamille, on_delete=models.CASCADE,blank=True)
 	isDispo = models.BooleanField(default=True)
-	price = models.IntegerField
+	price = models.DecimalField(default=0, max_digits=19,decimal_places=2)
 	fournisseurID = models.ForeignKey(Fournisseur, blank=True)
 	emprunteur = models.ForeignKey(Pignouf, blank=True, null=True)
 	def __str__(self):
